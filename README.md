@@ -30,7 +30,7 @@ A mod is a Claude Code plugin with a hooks module: it can add status lines, rows
 
 Replace `task-progress` with any mod name above. Run `/plugin` to enable, disable or configure it later.
 
-**Requires** a Claude Code build that loads hooks modules. These mods were built and tested on Claude Code 2.1.296. Check yours with `claude --version`.
+**Requires** Claude Code 2.1.286 or newer, the first build that loads hooks modules (a similar mod, [zycck/claude-mods](https://github.com/zycck/claude-mods), documents the same minimum). These mods were built and tested on 2.1.296; older builds have not been tried. Check yours with `claude --version`.
 
 ## task-progress
 
