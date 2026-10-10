@@ -4,7 +4,7 @@ const STATUS = /^[🟢🟡🔴] \S/u
 const AT_START = String.raw`(?:^|[;&|(]\s*|\n\s*)`
 const ARG = String.raw`(?:"[^"]+"|'[^']+'|[^\s"';&|)]+)`
 const GIT_OPTS = String.raw`(?:\s+(?:-[Cc]\s+${ARG}|--(?:git-dir|work-tree|namespace|super-prefix|config-env)\s+${ARG}|--[a-z-]+(?:=${ARG})?|-p))*`
-const GIT_COMMIT = new RegExp(`${AT_START}git${GIT_OPTS}\\s+commit\\b`)
+const GIT_COMMIT = new RegExp(`${AT_START}git${GIT_OPTS}\\s+commit(?![\\w-])`)
 const GH_PR_CREATE = new RegExp(`${AT_START}gh\\s+pr\\s+create\\b`)
 const MOVES = new RegExp(
   `${AT_START}(?:gh\\s+(?:pr\\s+(?:merge|create)|issue\\s+close)\\b|(?:vercel|render|fly|wrangler)\\b[^\\n]*\\bdeploy\\b|(?:npm|pnpm|yarn)\\s+(?:run\\s+)?deploy\\b)`,
@@ -23,7 +23,7 @@ export const subjectProblem = (subject: string, dynamic = false): string | undef
 export const scrub = (cmd: string): string =>
   cmd.replace(
     /^([^\n]*)<<-?\s*(['"]?)(\w+)\2[^\n]*\n[\s\S]*?\n[ \t]*\3[ \t]*$/gm,
-    (all, head: string) => (/\bgit\s+commit\b|\bgh\s+pr\b/.test(head) ? all : `${head}<<`),
+    (all, head: string) => (/\bgit\s+commit(?![\w-])|\bgh\s+pr\b/.test(head) ? all : `${head}<<`),
   )
 
 const first = (m: RegExpMatchArray | null) => m?.slice(1).find(g => g !== undefined)

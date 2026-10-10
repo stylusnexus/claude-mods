@@ -246,3 +246,9 @@ test('replies without a strip draw no strip warning', async () => {
   await s.say('are we still working on our issues?', 'Yes, both threads are moving.\n\n🟡 ok')
   expect(s.toasts).toEqual([])
 })
+
+test('does not mistake other git commands that start with commit for git commit', () => {
+  expect(commitSubject('git commit-tree abc123 -m "Not a rule subject"')).toBeUndefined()
+  expect(commitFile('git commit-tree abc123 -F -')).toBeUndefined()
+  expect(commitSubject('git commit -m "fix: a b"')?.text).toBe('fix: a b')
+})
