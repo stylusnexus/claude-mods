@@ -1,0 +1,25 @@
+{
+  "name": "house-rules",
+  "version": "0.3.0",
+  "description": "Checks goal-checklist strips, and optionally the closing status line and the conventional-commit title rule.",
+  "author": {
+    "name": "Stylus Nexus"
+  },
+  "types": "./types/index.d.ts",
+  "userConfig": {
+    "checkStatusLine": {
+      "type": "boolean",
+      "title": "Check the closing status line",
+      "description": "Warn when a reply does not end on a 🟢/🟡/🔴 status line of 100 characters or fewer.",
+      "default": false
+    },
+    "enforceCommitRule": {
+      "type": "boolean",
+      "title": "Enforce the commit and PR title rule",
+      "description": "Block git commit and gh pr create unless the subject is type(scope): summary, 50 characters or fewer, lowercase after the colon, no trailing period.",
+      "default": false
+    }
+  },
+  "license": "MIT",
+  "repository": "https://github.com/stylusnexus/claude-mods"
+}

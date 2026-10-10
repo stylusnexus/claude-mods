@@ -1,0 +1,20 @@
+{
+  "name": "task-progress",
+  "version": "0.1.0",
+  "description": "A progress row above the prompt for each plan the model reports, plus a row per running subagent. The bar shows what the model reports; it costs no tokens to draw.",
+  "author": {
+    "name": "Stylus Nexus"
+  },
+  "userConfig": {
+    "doneBarSeconds": {
+      "type": "number",
+      "title": "Keep finished plans (seconds)",
+      "description": "How long a finished plan's row stays above the prompt before it leaves.",
+      "default": 30,
+      "min": 0,
+      "max": 3600
+    }
+  },
+  "license": "MIT",
+  "repository": "https://github.com/stylusnexus/claude-mods"
+}

@@ -1,0 +1,31 @@
+{
+  "name": "deploy-watch",
+  "version": "0.1.0",
+  "description": "Status light for Render deploys in the status line, with a toast when one starts, goes live, fails or is canceled.",
+  "author": {
+    "name": "Stylus Nexus"
+  },
+  "userConfig": {
+    "renderApiKey": {
+      "type": "string",
+      "title": "Render API key",
+      "description": "A Render API key (Account Settings, API Keys). Read-only use: the mod only lists deploys.",
+      "sensitive": true
+    },
+    "serviceIds": {
+      "type": "string",
+      "title": "Services to watch",
+      "description": "Render service ids, separated by commas. Label one with name=id, for example api=srv-abc123,web=srv-def456."
+    },
+    "pollSeconds": {
+      "type": "number",
+      "title": "Check every (seconds)",
+      "description": "How often to ask Render for the newest deploy. At least 10.",
+      "default": 30,
+      "min": 10,
+      "max": 600
+    }
+  },
+  "license": "MIT",
+  "repository": "https://github.com/stylusnexus/claude-mods"
+}

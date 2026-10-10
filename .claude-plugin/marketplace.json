@@ -1,0 +1,32 @@
+{
+  "name": "stylusnexus-mods",
+  "owner": {
+    "name": "Stylus Nexus",
+    "url": "https://github.com/stylusnexus"
+  },
+  "metadata": {
+    "description": "Claude Code mods by Stylus Nexus"
+  },
+  "plugins": [
+    {
+      "name": "task-progress",
+      "source": "./plugins/task-progress",
+      "description": "Progress rows above the prompt for each plan the model reports, plus a row per running subagent."
+    },
+    {
+      "name": "limits-meter",
+      "source": "./plugins/limits-meter",
+      "description": "Status line shows 5-hour and weekly usage plus running subagents; toasts at 90% and 95% of a window."
+    },
+    {
+      "name": "deploy-watch",
+      "source": "./plugins/deploy-watch",
+      "description": "Status light for Render deploys in the status line, with a toast when one starts, goes live, fails or is canceled."
+    },
+    {
+      "name": "house-rules",
+      "source": "./plugins/house-rules",
+      "description": "Checks goal-checklist strips, and optionally the closing status line and the conventional-commit title rule."
+    }
+  ]
+}

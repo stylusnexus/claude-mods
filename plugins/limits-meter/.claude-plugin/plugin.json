@@ -1,0 +1,10 @@
+{
+  "name": "limits-meter",
+  "version": "0.1.0",
+  "description": "Status line shows 5-hour and weekly usage plus running subagents; toasts at 90% and 95% of a window.",
+  "author": {
+    "name": "Stylus Nexus"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/stylusnexus/claude-mods"
+}
